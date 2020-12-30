@@ -6,23 +6,14 @@
 </head>
 <body>
     <h1>电影推荐网站</h1>
-    <form action="#" method="get" id="userId">
-        请输入你想要获得推荐的用户id:<input type="text"><br>
+    <form action="/data" method="post" id="userId">
+        请输入你想要获得推荐的用户id:
+        <label>
+            <input type="text" name="id">
+        </label>
+        <br>
         <input type="submit" value="提交">
     </form>
-    <table>
-        <thead>
-            <tr>
-                <th>推荐电影名称</th>
-                <th>推荐指数</th>
-            </tr>
-        </thead>
-        <tbody id="movieList">
-        </tbody>
-    </table>
 </body>
-<script src="../static/js/jquery-2.2.1.min.js"></script>
 
-<script type="text/javascript" src="../static/main/returnUserId.js"></script>
-<script type="text/javascript" src="../static/main/getMovie.js"></script>
 </html>

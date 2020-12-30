@@ -8,6 +8,5 @@ page = Blueprint('page', __name__)
 
 
 @page.route('/', endpoint="index")
-def login():
+def index():
     return render_template("index.html")
-

@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 import decimal
 import json
-from flask import Blueprint
+from flask import Blueprint, request, render_template
 from config import db
 
 from dbmodel.userMovie import MovieName
@@ -19,9 +19,16 @@ class DecimalEncoder(json.JSONEncoder):
         super(DecimalEncoder, self).default(o)
 
 
+@data.route('/', methods=['GET', 'POST'])
+def get_id():
+    global Uid
+    Uid = request.form.get('id')
+    return render_template("getData.html")
+
+
 @data.route('/getMovieName', methods=['GET'])
 def get_movie_name():
-    data = db.session.query(MovieName).filter(MovieName.userId == 1).all()
+    data = db.session.query(MovieName).filter(MovieName.userId == Uid).all()
     view_data = {"movieName": [], "rating": []}
 
     def build_view_data(item):
@@ -32,6 +39,5 @@ def get_movie_name():
         build_view_data(item)
 
     view_data_string = json.dumps(view_data, cls=DecimalEncoder, ensure_ascii=False)
-    print(view_data_string)
 
     return view_data_string

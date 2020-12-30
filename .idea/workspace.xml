@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9097801e-5f7f-4e50-b1d6-d8492c8d212d" name="Default Changelist" comment="" />
+    <list default="true" id="9097801e-5f7f-4e50-b1d6-d8492c8d212d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/getData.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/main/returnUserId.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/data_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/data_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/page_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/page_view.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,13 +50,19 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Flask Main" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1m3a5jUjVdhTWDMxA4C7vmdYlhj" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -57,8 +72,9 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CquSpark" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -181,8 +197,8 @@
     <list>
       <item itemvalue="Flask server.MovieLen" />
       <item itemvalue="Flask server.Flask (app.py)" />
-      <item itemvalue="Python.recommendTrain" />
       <item itemvalue="Flask server.Flask (config.py)" />
+      <item itemvalue="Python.recommendTrain" />
       <item itemvalue="Python.app" />
       <item itemvalue="Python.recommend_movie" />
     </list>
@@ -211,6 +227,9 @@
       <workItem from="1608781168679" duration="4068000" />
       <workItem from="1608804833002" duration="16597000" />
       <workItem from="1608904940582" duration="52169000" />
+      <workItem from="1609164261979" duration="10558000" />
+      <workItem from="1609177412681" duration="1755000" />
+      <workItem from="1609179586378" duration="5009000" />
     </task>
     <servers />
   </component>
@@ -230,34 +249,38 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="926" y="375" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1608775284959" />
+    <state x="923" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1609176568022">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="923" y="269" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1609176568022" />
     <state x="1010" y="291" key="FileChooserDialogImpl" timestamp="1609081657244">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1010" y="291" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1609081657244" />
-    <state width="1328" height="341" key="GridCell.Tab.0.bottom" timestamp="1609131228841">
+    <state width="1342" height="267" key="GridCell.Tab.0.bottom" timestamp="1609184602459">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1328" height="341" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1609131228841" />
-    <state width="1328" height="341" key="GridCell.Tab.0.center" timestamp="1609131228841">
+    <state width="1342" height="267" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1609184602459" />
+    <state width="1342" height="267" key="GridCell.Tab.0.center" timestamp="1609184602459">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1328" height="341" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1609131228841" />
-    <state width="1328" height="341" key="GridCell.Tab.0.left" timestamp="1609131228841">
+    <state width="1342" height="267" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1609184602459" />
+    <state width="1342" height="267" key="GridCell.Tab.0.left" timestamp="1609184602459">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1328" height="341" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1609131228841" />
-    <state width="1328" height="341" key="GridCell.Tab.0.right" timestamp="1609131228841">
+    <state width="1342" height="267" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1609184602459" />
+    <state width="1342" height="267" key="GridCell.Tab.0.right" timestamp="1609184602459">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1328" height="341" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1609131228841" />
+    <state width="1342" height="267" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1609184602459" />
     <state x="874" y="242" key="SettingsEditor" timestamp="1609006965095">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="874" y="242" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1609006965095" />
-    <state x="769" y="397" key="com.intellij.ide.util.TipDialog" timestamp="1608904943489">
+    <state x="769" y="397" key="com.intellij.ide.util.TipDialog" timestamp="1609179589829">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="769" y="397" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1608904943489" />
+    <state x="769" y="397" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1609179589829" />
     <state x="1004" y="246" width="672" height="678" key="search.everywhere.popup" timestamp="1609078143364">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -270,6 +293,6 @@
     <SUITE FILE_PATH="coverage/MovieLen$test.coverage" NAME="test Coverage Results" MODIFIED="1608833492280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/management" />
     <SUITE FILE_PATH="coverage/MovieLen$recommendTrain.coverage" NAME="recommendTrain Coverage Results" MODIFIED="1609072946204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/management" />
     <SUITE FILE_PATH="coverage/MovieLen$recommend_movie.coverage" NAME="recommend_movie Coverage Results" MODIFIED="1609088018673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/management" />
-    <SUITE FILE_PATH="coverage/MovieLen$app.coverage" NAME="app Coverage Results" MODIFIED="1609090625872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/MovieLen$app.coverage" NAME="app Coverage Results" MODIFIED="1609184537942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
