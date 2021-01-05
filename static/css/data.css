@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+	background-image: url("../images/mountion.png");
+	background-size: cover;
+}
+
+p {
+	float: left;
+	font-size: 30px;
+}
+
+.commend {
+
+}
+
+.commend h1 {
+	text-align: center;
+	padding: 20px;
+	float: left;
+}
+
+.back {
+	width: 100%;
+	padding-left: 37%;
+	margin-top: 20px;
+}
+
+.back a {
+    text-decoration: none;
+	font-size: 20px;
+	color: black;
+}
+
+.back a:hover {
+	color: red;
+}
+
+table{
+	clear: both;
+	border-collapse: collapse;
+	text-align: center;
+	margin: 50px auto 0;
+}
+
+table td, table th {
+	border: 1px solid #cad9ea;
+	color: #666;
+	height: 30px;
+}
+
+table thead th {
+	background-color: #CCE8EB;
+	width: 100px;
+}
+
+table tr:nth-child(odd) {
+	background: #fff;
+}
+
+table tr:nth-child(even) {
+	background: #F5FAFA;
+}
+
+.from {
+	clear: both;
+    text-align: center;
+    width: 1000px;
+    height: 40px;
+    padding: 10px 0 10px 20%;
+}
+
+.from input {
+    float: left;
+    width: 200px;
+    height: 40px;
+    border: 1px solid #00a4ff;
+    border-right: 0;
+    font-size: 14px;
+    color: #bfbfbf;
+    padding-left: 15px;
+}
+
+.from button {
+    float: left;
+    width: 50px;
+    height: 42px;
+    border: 1px solid #00a4ff;
+    background-image: url("../images/submit.png");
+}

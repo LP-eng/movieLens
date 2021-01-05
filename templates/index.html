@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电影推荐首页</title>
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
+
 <body>
-    <h1>电影推荐网站</h1>
-    <form action="/data" method="post" id="userId">
-        请输入你想要获得推荐的用户id:
-        <label>
-            <input type="text" name="id">
-        </label>
-        <br>
-        <input type="submit" value="提交">
-    </form>
+    <div class="commend">
+        <h1>电影推荐系统</h1>
+    </div>
+    <!-- 搜索模块 -->
+    <div class="search">
+        <form action="/data" method="post" id="userId">
+            <input type="text" name="id" placeholder="请输入你想要获得推荐的用户id" required>
+            <button type="submit"></button>
+        </form>
+    </div>
 </body>
 
 </html>

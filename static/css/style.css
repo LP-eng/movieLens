@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("../images/File Nov 08, 17 51 21.png");
+    background-size: cover;
+}
+
+.commend {
+    width: 100%;
+}
+
+.commend h1 {
+	text-align: center;
+	padding: 20px;
+}
+
+.image img{
+    width: 100%;
+}
+
+/* 搜索 */
+.search {
+    clear: both;
+    text-align: center;
+    width: 1000px;
+    height: 40px;
+    padding: 10px 0 10px 20%;
+}
+
+.search input {
+    float: left;
+    width: 345px;
+    height: 40px;
+    border: 1px solid #00a4ff;
+    border-right: 0;
+    font-size: 14px;
+    color: #bfbfbf;
+    padding-left: 15px;
+}
+
+.search button {
+    float: left;
+    width: 50px;
+    height: 42px;
+    border: 0;
+    background-image: url("../images/btn.png");
+}
