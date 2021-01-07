@@ -34,9 +34,12 @@ def isFloat(num):
 
 @data.route('/', methods=['GET', 'POST'])
 def get_id():
-    global Uid
-    Uid = request.form.get('id')
-    return render_template("getRecommendMovie.html")
+    if request.method == 'GET':
+        return render_template("index.html")
+    else:
+        global Uid
+        Uid = request.form.get('id')
+        return render_template("getRecommendMovie.html")
 
 
 @data.route('/tag', methods=['GET', 'POST'])
