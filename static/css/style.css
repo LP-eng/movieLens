@@ -1,15 +1,103 @@
 * {
     margin: 0;
     padding: 0;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 body {
-    background-image: url("../images/File Nov 08, 17 51 21.png");
-    background-size: cover;
+    line-height: 24px;
+    font: 14px Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-serif;
 }
 
-.commend {
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.header {
+    z-index: 1000;
+    height: 60px;
+}
+
+.layout{
+
+}
+
+.layout-body {
+    overflow: hidden;
+}
+
+.layout .header {
+    background-color: #23262E;
+}
+
+.layout .logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 175px;
+    height: 100%;
+    line-height: 60px;
+    text-align: center;
+    color: #dbff81;
+    font-size: 16px;
+}
+
+.layout .side {
+    top: 60px;
+    width: 175px;
+    overflow-x: hidden;
+}
+
+.bg-black {
+    background-color: #393D49;
+}
+
+.side-scroll {
+    position: relative;
+    width: 175px;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.nav {
+    position: relative;
+    padding: 0 20px;
+    background-color: #393D49;
+    color: #fff;
+    border-radius: 2px;
+    font-size: 0;
+    box-sizing: border-box;
+}
+
+.nav-tree {
+    width: 175px;
+    padding: 0;
+}
+
+.nav-item {
+    display: block;
     width: 100%;
+    line-height: 45px;
+}
+
+.nav * {
+    font-size: 14px;
+}
+
+.a-word {
+    color: white;
+    text-decoration: none;
+    padding-left: 60px;
+}
+
+.a-word:hover {
+    color: #fffa2d;
 }
 
 .commend h1 {
@@ -21,13 +109,37 @@ body {
     width: 100%;
 }
 
+div {
+    display: block;
+}
+
+.content-body {
+    top: 60px;
+    bottom: 0;
+    position: absolute;
+    left: 175px;
+    right: 0;
+    z-index: 998;
+    width: auto;
+    overflow: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.content-body p {
+    display: inline-block;
+    margin: 5px;
+	float: left;
+}
+
 /* 搜索 */
 .search {
+    display: none;
     clear: both;
     text-align: center;
     width: 1000px;
-    height: 40px;
-    padding: 10px 0 10px 20%;
+    height: 25%;
+    padding: 80px 0 10px 30%;
 }
 
 .search input {
@@ -47,4 +159,125 @@ body {
     height: 42px;
     border: 0;
     background-image: url("../images/btn.png");
+}
+
+.rating {
+    display: none;
+    text-align: center;
+    margin: 20%;
+}
+
+.rating input {
+    float: left;
+    width: 345px;
+    height: 40px;
+    border: 1px solid #00a4ff;
+    border-right: 0;
+    font-size: 14px;
+    color: #bfbfbf;
+    padding-left: 15px;
+}
+
+.rating button {
+    float: left;
+    width: 50px;
+    height: 42px;
+    border: 0;
+    background-image: url("../images/submit.png");
+}
+
+.home-page {
+    display: block;
+    background-image: url("../images/preview.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin:0 auto;
+}
+
+.home-page:after {
+    content: "";
+    display: block;
+    padding: 40%;
+}
+
+.home-page p {
+    text-align: center;
+    clear: both;
+    font-size: 30px;
+    margin: 20px auto 0;
+}
+
+.ranking {
+    display: none;
+    text-align: center;
+}
+
+.ranking p {
+    display: inline-block;
+}
+
+.ranking a:hover{
+    color: #01ff37;
+}
+
+table{
+	clear: both;
+	border-collapse: collapse;
+	text-align: center;
+	margin: 15px auto 0;
+}
+
+table td, table th {
+	border: 1px solid #cad9ea;
+	color: #666;
+	height: 30px;
+}
+
+table thead th {
+	background-color: #CCE8EB;
+}
+
+table tr:nth-child(odd) {
+	background: #fff;
+}
+
+table tr:nth-child(even) {
+	background: #F5FAFA;
+}
+
+.commend {
+
+}
+
+.commend p {
+    font-weight: bold;
+	text-align: center;
+	padding: 20px;
+	float: left;
+}
+
+.back {
+	width: 100%;
+	padding-left: 37%;
+	margin-top: 20px;
+}
+
+.back a {
+    text-decoration: none;
+	font-size: 20px;
+	color: black;
+}
+
+.back a:hover {
+	color: red;
+}
+
+.commend {
+
+}
+
+.commend h1 {
+	text-align: center;
+	padding: 20px;
+	float: left;
 }

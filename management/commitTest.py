@@ -1,40 +1,35 @@
-import pandas as pd
 import numpy as np
-import pickle
-
-from pyspark.sql import SparkSession
-from pyspark.mllib.recommendation import ALS
 import pandas as pd
-from pyspark.sql.functions import monotonically_increasing_id
-
-# 连接spark
-spark = SparkSession \
-    .builder \
-    .appName("SparkSQLDemo") \
-    .config("spark.some.config.option", "some-value") \
-    .getOrCreate()
+import pymysql
 
 # 连接mysql
-url = 'jdbc:mysql://127.0.0.1:3306/movie_data_min?&useSSL=false'
-properties = {'user': 'root', 'password': 'root'}
+from sqlalchemy import create_engine
+
+host = "106.15.193.14"
+user = "movie_data"
+conn = pymysql.connect(host=host, port=3306, user=user, passwd="root",
+                       db="movie_data", charset="utf8")
+
 # 查看需数据
-table1 = "(select * from ratings) tmp"  # 写sql查询ratings表
-table2 = "(select * from movies) tmp"  # 写sql查询movies表
+sql_1 = "select * from ratings"  # 写sql查询ratings表
+sql_2 = "(select * from movies) tmp"  # 写sql查询movies表
 
-# 得到协同过滤矩阵
-# 获取(userId, {movieId: rating})的数据格式
-df1 = spark.read.jdbc(url=url, table=table1, properties=properties)
-dataRDD = df1.rdd.map(lambda x: (x.userId, {x.movieId: x.rating})) \
-    .reduceByKey(lambda x, y: {**x, **y}) \
-    .map(lambda x: {x[0]: x[1]})
+# 得到数据
+df = pd.read_sql(sql_1, con=conn)
+conn.close()
 
-# 得到列表
-rating_list = dataRDD.collect()
-# 将列表转换成字典
+# 对数据进行操作
+df1 = df.drop(columns='timestamp')
 rating_dict = {}
-for i in rating_list:
-    rating_dict = {**rating_dict, **i}
-# 将rdd转换成pandas的dataFrame
+
+# 将数据转换为矩阵‎
+for i in range(df1.shape[0]):
+    line = df1.iloc[i, :]
+    if line.userId in rating_dict:
+        rating_dict[int(line.userId)][int(line.movieId)] = float(line.rating)
+    else:
+        rating_dict[int(line.userId)] = {int(line.movieId): float(line.rating)}
+
 rating_matrix = pd.DataFrame(rating_dict).T
 
 # 数据规范化，以消除错误‎
@@ -60,4 +55,34 @@ downfactor = (np.linalg.norm(std_matrix, axis=0).reshape(-1, 1)).dot(np.linalg.n
 # 在原本余弦相似度的基础上进行小小修改，将值定在0～1之间
 cosSim = (upfactor / downfactor + 1) / 2
 
+# 离线推荐系统
+predict_matrix = pd.DataFrame()
+userIdlist = rating_matrix.index
+movieIdList = rating_matrix.columns
+for user in range(rating_matrix.shape[0]):
+    userId = userIdlist[user]
+    unrate = np.isnan(rating_matrix.values[user, :])
+    haverated = ~unrate
+    recommendId = movieIdList[unrate]
+    similar_movie_rated = (cosSim[unrate, :][:, haverated]) * (cosSim[unrate, :][:, haverated] > 0.4)  # martix of
+    ratedmovie = (rating_matrix.values[user, :][haverated])
+    print(userIdlist[user])
+    sum_rated_cos = np.sum(similar_movie_rated, axis=1)
+    for i in range(sum_rated_cos.shape[0]):
+        if sum_rated_cos[i] == 0:
+            sum_rated_cos[i] = 1
+    predict_Val = similar_movie_rated.dot(ratedmovie.T) / sum_rated_cos
+    index = np.argsort(predict_Val)[::-1]
+    if len(predict_Val > 10):
+        index = index[:10]
+    predict_Val = predict_Val[index]
+    recommendId = recommendId[index]
+    predict_matrix = pd.concat(
+        [predict_matrix, pd.DataFrame({'userId': userId, 'recommendId': recommendId, 'predictScore': predict_Val})])
 
+# 将其索引值重新改变
+predict_matrix.reset_index(inplace=True)
+# 创建连接
+engine = create_engine('mysql+pymysql://movie_data:root@106.15.193.14:3306/movie_data?charset=utf8')
+# 存入数据库
+predict_matrix.to_sql(name="user_recommend_movie", con=engine, if_exists="replace", index=True)

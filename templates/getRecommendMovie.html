@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>推荐电影</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body class="layout-body">
+<div class="layout">
+    <div class="header">
+        <div class="logo">电影推荐系统</div>
+    </div>
+    <div class="side bg-black">
+        <div class="side-scroll">
+            <ul class="nav nav-tree">
+                <li class="nav-item">
+                    <a class="a-word" href="javascript:history.go(-1)">
+                        返回上一页
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="content-body">
+    <p>当前的用户id是： </p>
+    <p id="uid"></p>
+    <div class="commend">
+        <p>给用户</p>
+        <p id="uid1"></p>
+        <p>推荐的电影：</p>
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <th>电影ID</th>
+            <th>推荐电影名称</th>
+            <th>推荐指数</th>
+        </tr>
+        </thead>
+        <tbody id="movieList">
+        </tbody>
+    </table>
+</div>
+</body>
+
+<script src="../static/js/jquery-2.2.1.min.js"></script>
+
+<script type="text/javascript" src="../static/main/getRecommendMovie.js"></script>
+</html>

@@ -8,17 +8,101 @@
     <link rel="stylesheet" href="../static/css/style.css">
 </head>
 
-<body>
-    <div class="commend">
-        <h1>电影推荐系统</h1>
+<body class="layout-body">
+<div class="layout">
+    <div class="header">
+        <div class="logo">电影推荐系统</div>
     </div>
-    <!-- 搜索模块 -->
-    <div class="search">
-        <form action="/data" method="post" id="userId">
-            <input type="text" name="id" placeholder="请输入你想要获得推荐的用户id" required>
-            <button type="submit"></button>
-        </form>
+    <div class="side bg-black">
+        <div class="side-scroll">
+            <ul class="nav nav-tree">
+                <li class="nav-item">
+                    <a class="a-word" id="choose1">
+                        首页
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="a-word" id="choose2">
+                        用户推荐
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="a-word" id="choose3">
+                        电影排行
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="a-word" id="choose4">
+                        电影打分
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="a-word" id="choose5">
+                        电影查询
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-</body>
+    <div class="content-body">
+        <!-- 首页模块 -->
+        <div class="home-page" id="show1">
+            <p>欢迎来到电影推荐系统！</p>
+        </div>
+        <!-- 用户推荐模块 -->
+        <div class="search" id="show2">
+            <form action="/data" method="post" id="userId">
+                <input type="text" name="id" placeholder="请输入你想要获得推荐的用户id" required>
+                <button type="submit"></button>
+            </form>
+        </div>
+        <!-- 电影排行模块 -->
+        <div class="ranking" id="show3">
+            <p id="btn0"></p>
+            <input id="pageSize" type="text" size="1" maxlength="2"/>
+            <p>条</p>
+            <a id="pageSizeSet">设置</a>
+            <p id="sjzl"></p>
+            <a id="btn1">首页</a>
+            <a id="btn2">上一页</a>
+            <a id="btn3">下一页</a>
+            <a id="btn4">尾页</a>
+            <p>转到 </p>
+            <input id="changePage" type="text" size="1" maxlength="4"/>
+            <p>页 </p>
+            <a id="btn5">跳转</a>
+            <table id="mytable">
+                <thead>
+                <tr>
+                    <th>电影ID</th>
+                    <th>电影名称</th>
+                    <th>电影评分</th>
+                </tr>
+                </thead>
+                <tbody id="movieRanking">
+                </tbody>
+            </table>
+        </div>
+        <!-- 电影打分模块 -->
+        <div class="rating" id="show4">
+            <form action="/data/uploadRating" method="post" id="rating">
+                <input type="text" name="uid" placeholder="请输入你的用户id" required>
+                <input type="text" name="movieId" placeholder="请输入你想要评价的电影id" required>
+                <input type="text" name="rating" placeholder="请输入你的评分" required>
+                <button type="submit"></button>
+            </form>
+        </div>
+        <!-- 电影查询模块 -->
+        <div class="search" id="show5">
+            <form action="/data/tag" method="post" id="tag">
+                <input type="text" name="tag" placeholder="请输入你想要查看的标签" required>
+                <button type="submit"></button>
+            </form>
+        </div>
+    </div>
+</div>
 
+</body>
+<script src="../static/js/jquery-2.2.1.min.js"></script>
+<script type="text/javascript" src="../static/main/index.js"></script>
 </html>
